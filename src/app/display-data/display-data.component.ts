@@ -16,6 +16,7 @@ export class DisplayDataComponent implements OnInit {
   dataHeading = "Hall Fixtures";
   forms=[];
   mockDropDowns = {};
+  loading = true;
 
   constructor(private mockData: DataService, private fb: FormBuilder) { }
 
@@ -35,6 +36,7 @@ export class DisplayDataComponent implements OnInit {
   }
 
   getFixtureData(){
+    this.loading = true;
     this.mockData.getFixtureData().subscribe((fixtureData)=>{
       this.dataArray = fixtureData;
 
@@ -55,10 +57,12 @@ export class DisplayDataComponent implements OnInit {
           finish:["finish1","finish2"],
           notes:["notes1","notes2"]
         }
+        this.loading = false;
     })
   }
 
   getEntranceSet(){
+    this.loading = true;
     this.mockData.getEntranceSetData().subscribe((entranceSetData)=>{
       this.dataArray = entranceSetData;
       this.mockDropDowns = 
@@ -69,7 +73,7 @@ export class DisplayDataComponent implements OnInit {
           doorFinish:["Powder Coated","Aluminiunm"],
           sillFinish:["Powder Coated","Aluminiunm"]
         }
-      
+      this.loading=false;
     })
   }
   originalOrder = (a, b): number => {
