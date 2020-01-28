@@ -61,20 +61,6 @@ export class DisplayDataComponent implements OnInit {
   getEntranceSet(){
     this.mockData.getEntranceSetData().subscribe((entranceSetData)=>{
       this.dataArray = entranceSetData;
-      
-      // The below code can be used to create forms dynamically
-      // this.dataArray.forEach((data,index) => {
-      //   this.forms[index] = this.fb.group({
-      //     quantity:[data.quantity],
-      //     leftJamb:[null],
-      //     rightJamb:[null],
-      //     thickness:[data.thickness],
-      //     weldedFrame:[data.weldedFrame],
-      //     frameFinish:[null],
-      //     doorFinish:[null],
-      //     sillFinish:[null]
-      //   })
-      // });
       this.mockDropDowns = 
         {
           leftJamb: ["Controller","HW Access"],

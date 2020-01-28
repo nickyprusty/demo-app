@@ -59,14 +59,6 @@
       <option disabled selected value="">Select</option>
       <option *ngFor="let opt of mockDropDowns[item]" >{{opt}}</option>
     </select>
-    <!-- <mat-form-field>
-      <mat-label>{{item}}</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let opt of mockDropDowns[item]" [value]="opt">
-          {{opt}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field> -->
   </ng-template>
 
   <ng-template #numberTemplate let-item='item'>
