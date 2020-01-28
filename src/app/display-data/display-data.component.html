@@ -6,6 +6,7 @@
         <button mat-raised-button color="primary" (click)="changeData('entrance')">Entrance Set</button>
       </div>
     </div>
+    
     <div class="row mt-3" *ngIf="dataArray">
       <div class="col-lg-10 offset-lg-1 col-12">
         <h2>{{dataHeading}}
@@ -13,7 +14,8 @@
             <button class="btn btn-success">Add Set <i class="fa fa-plus text-light ml-1 mt-1" aria-hidden="true"></i></button>
           </span>
         </h2>
-        <table class="table">
+        <div class="text-center" *ngIf="loading"><mat-spinner></mat-spinner></div>
+        <table class="table" *ngIf="!loading">
             <thead>
                 <th *ngFor="let keys of objectKeys(dataArray[0])">{{keys}}</th>
             </thead>
